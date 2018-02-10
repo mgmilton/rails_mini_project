@@ -5,4 +5,14 @@ FactoryBot.define do
     sequence(:password) {|n| "Password#{n}"}
   end
 
+  factory :category do
+    sequence(:name) {|n| "Name #{n}"}
+  end
+
+  factory :idea do
+    sequence(:title) {|n| "Title #{n}"}
+    sequence(:description) {|n| "Descriptipn #{n}" }
+    category
+  end
+
 end

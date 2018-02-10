@@ -1,0 +1,6 @@
+<h1> Admin Categories </h1>
+
+<% @categories.each do |category| %>
+  <ul> <%= link_to category.name, category_path(category) %> </ul>
+
+  <% end %>

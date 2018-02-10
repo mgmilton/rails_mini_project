@@ -10,10 +10,9 @@ describe "As a visitor" do
       click_on "Log In"
 
       expect(current_path).to eq(login_path)
-
-      fill_in "user[name]", with: user.name
-      fill_in "user[email]", with: user.email
-      fill_in "user[password]", with: user.password
+    
+      fill_in "email", with: user.email
+      fill_in "password", with: user.password
 
       click_on "Log In"
 

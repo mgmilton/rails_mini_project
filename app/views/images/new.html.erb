@@ -1,4 +1,7 @@
-<%= form_for @image do |f| %>
+<%= form_for (@image) do |f| %>
    <%= f.label :url %>
    <%= f.text_field :url%>
-   <% end %>
+
+   <%= f.label :image, "Attach an Image" %></br>
+   <%= f.file_field :image %>
+<% end %>

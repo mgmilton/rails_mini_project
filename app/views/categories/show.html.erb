@@ -1,0 +1,6 @@
+<h3> <%= @category.name %></h3>
+
+All ideas under <%= @category.name %>: </br>
+  <% @category.ideas.each do |idea| %>
+      <%=link_to idea.title, category_idea_path(idea.category, idea) %></br>
+  <% end %>

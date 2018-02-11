@@ -43,7 +43,7 @@ class IdeasController < ApplicationController
     @idea.destroy
 
     flash[:success] = "#{@idea.title} was successfully deleted"
-    redirect_to category_path(category)
+    redirect_to ideas_path
   end
 
   private

@@ -4,13 +4,13 @@ describe "User visits idea index page" do
   context "as logged in user" do
     it "allows default user to create an idea" do
       user = create(:user)
-      i1 = create(:idea)
-      i2 = create(:idea)
-      i3 = create(:idea)
+      i1 = create(:idea, user: user)
+      i2 = create(:idea, user: user)
+      i3 = create(:idea, user: user)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit ideas_path
+      visit user_ideas_path(user)
 
       expect(page).to have_content(i1.title)
       expect(page).to have_content(i1.description)

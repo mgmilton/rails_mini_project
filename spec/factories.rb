@@ -11,7 +11,8 @@ FactoryBot.define do
 
   factory :idea do
     sequence(:title) {|n| "Title #{n}"}
-    sequence(:description) {|n| "Descriptipn #{n}" }
+    sequence(:description) {|n| "Description #{n}" }
+    user
     category
   end
 

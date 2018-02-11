@@ -5,11 +5,11 @@ describe "User visits idea index page" do
     it "allows default user to edit an idea" do
       user = create(:user)
       category = create(:category)
-      idea = create(:idea)
+      idea = create(:idea, user: user)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit edit_idea_path(idea)
+      visit edit_user_idea_path(user, idea)
 
 
       fill_in "idea[title]", with: "test"

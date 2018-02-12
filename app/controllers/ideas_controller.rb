@@ -1,8 +1,7 @@
 class IdeasController < ApplicationController
   before_action :require_user
-  before_action :current_user
+  before_action :set_user
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:new, :create, :edit, :index]
 
   def index
     @ideas = @user.ideas
@@ -44,7 +43,7 @@ class IdeasController < ApplicationController
     user = @idea.user
     @idea.destroy
 
-    flash[:success] = "#{@idea.title} was successfully deleted"
+    flash[:success] = "Idea was successfully deleted"
     redirect_to user_ideas_path(user)
   end
 
@@ -59,7 +58,7 @@ class IdeasController < ApplicationController
     end
 
     def set_user
-      @user = @current_user
+      @user = current_user
     end
 
 end

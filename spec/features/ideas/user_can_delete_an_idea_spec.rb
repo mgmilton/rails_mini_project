@@ -6,9 +6,12 @@ describe "User visits idea index page" do
       user = create(:user)
       idea = create(:idea, user: user)
 
+      visit login_path
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
+      fill_in "email", with: user.email
+      fill_in "password", with: user.password
+      click_on "Log In Here"
+     
       visit user_ideas_path(user)
 
       click_link "Delete"

@@ -11,8 +11,14 @@ FactoryBot.define do
 
   factory :idea do
     sequence(:title) {|n| "Title #{n}"}
-    sequence(:description) {|n| "Descriptipn #{n}" }
+    sequence(:description) {|n| "Description #{n}" }
+    user
     category
+  end
+
+  factory :image do
+    sequence(:name) {|n| "Name #{n}"}
+    sequence(:url) {|n| "URL #{n}"}
   end
 
 end

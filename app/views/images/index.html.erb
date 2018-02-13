@@ -1,0 +1,6 @@
+<h2> All Images </h2>
+
+<% @images.each do |image| %>
+  <%= link_to image.name, image_path(image) %> </br>
+  <img src="<%= image.url %>"> </br> </br> </br>
+<% end %>

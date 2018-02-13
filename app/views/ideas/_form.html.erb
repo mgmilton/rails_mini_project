@@ -1,4 +1,4 @@
-<%= form_for @idea do |f| %>
+<%= form_for [@user, @idea] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -7,6 +7,13 @@
 
   <%= f.label :category_id %>
   <%= f.collection_select(:category_id, Category.order(:name), :id, :name) %>
+</br>
+  <%= f.label :images %>
+  <% Image.all.each do |image| %>
+</br>
+    <%= check_box_tag 'image', image.id%>
+    <%= image_tag image.url %>
+    <% end %>
 
   <%= f.submit %>
 <% end %>

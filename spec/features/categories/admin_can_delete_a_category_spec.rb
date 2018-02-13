@@ -12,7 +12,6 @@ describe "user visits category new page" do
 
       click_link "Delete"
 
-
       expect(page).to_not have_content(category.name)
     end
   end

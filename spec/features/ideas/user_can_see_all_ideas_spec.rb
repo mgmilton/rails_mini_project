@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "User visits idea index page" do
   context "as logged in user" do
-    it "allows default user to create an idea" do
+    it "allows default user to see all ideas" do
       user = create(:user)
       i1 = create(:idea, user: user)
       i2 = create(:idea, user: user)

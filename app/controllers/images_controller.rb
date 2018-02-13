@@ -1,5 +1,5 @@
 class ImagesController < Admin::BaseController
-  before_action :require_admin
+  before_action :require_admin, only: [:new, :create, :destroy]
 
   def index
     @images = Image.all
@@ -32,7 +32,7 @@ class ImagesController < Admin::BaseController
   private
 
     def image_params
-      params.require(:image).permit(:url, :image)
+      params.require(:image).permit(:name, :url, :image)
     end
 
 end

@@ -16,4 +16,9 @@ FactoryBot.define do
     category
   end
 
+  factory :image do
+    sequence(:name) {|n| "Name #{n}"}
+    sequence(:url) {|n| "URL #{n}"}
+  end
+
 end

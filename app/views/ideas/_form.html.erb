@@ -7,11 +7,13 @@
 
   <%= f.label :category_id %>
   <%= f.collection_select(:category_id, Category.order(:name), :id, :name) %>
-
+</br>
   <%= f.label :images %>
-  <!-- <%= f.collection_select(:image_ids, Image.all, :id, :url, {}, {:multiple =>true})  %> -->
-  <%= collection_check_boxes(:idea, :image_ids, Image.all, :id, :url)  %> </br>
-
+  <% Image.all.each do |image| %>
+</br>
+    <%= check_box_tag 'image', image.id%>
+    <%= image_tag image.url %>
+    <% end %>
 
   <%= f.submit %>
 <% end %>

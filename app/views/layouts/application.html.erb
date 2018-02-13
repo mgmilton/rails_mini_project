@@ -9,7 +9,8 @@
   </head>
 
   <body>
-    <nav>
+    <%= render "shared/admin_navigation" %>
+    <!-- <nav>
     <% if current_user %>
       <%= link_to "Log Out", logout_path, method: :delete %>
     <% else %>
@@ -17,7 +18,7 @@
     <% end %>
 
     <%= link_to "Sign Up", new_user_path %>
-    </nav>
+    </nav> -->
 
     <div id="main-container" class="container">
       <div class="row">

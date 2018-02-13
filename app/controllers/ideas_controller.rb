@@ -4,7 +4,11 @@ class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
   def index
-    @ideas = @user.ideas
+    if @user.admin?
+      @ideas = Idea.all
+    else
+      @ideas = @user.ideas
+    end
   end
 
   def new

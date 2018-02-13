@@ -10,7 +10,8 @@
 
   <%= f.label :images %>
   <!-- <%= f.collection_select(:image_ids, Image.all, :id, :url, {}, {:multiple =>true})  %> -->
-  <%= collection_check_boxes(:idea, :image_ids, Image.all, :id, :url)  %>
+  <%= collection_check_boxes(:idea, :image_ids, Image.all, :id, :url)  %> </br>
+
 
   <%= f.submit %>
 <% end %>

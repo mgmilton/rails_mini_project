@@ -22,11 +22,19 @@ class IdeasController < ApplicationController
   end
 
   def show
-    
+    if @user.ideas.include?(@idea)
+      render :show
+    else
+      render file: "/public/404"
+    end
   end
 
   def edit
-
+    if @user.ideas.include?(@idea)
+      render :edit
+    else
+      render file: "/public/404"
+    end
   end
 
   def update

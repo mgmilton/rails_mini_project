@@ -35,9 +35,8 @@ class CategoriesController < Admin::BaseController
   end
 
   def destroy
-    name = @category.name
     @category.destroy
-    flash[:success] = "Category #{name} was succesfully deleted"
+    flash[:success] = "Category was succesfully deleted"
     redirect_to categories_path
   end
 

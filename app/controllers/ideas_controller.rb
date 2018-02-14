@@ -4,7 +4,11 @@ class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
   def index
-    @ideas = @user.ideas
+    if @user.admin?
+      @ideas = Idea.all
+    else
+      @ideas = @user.ideas
+    end
   end
 
   def new
@@ -58,7 +62,7 @@ class IdeasController < ApplicationController
   private
 
     def idea_params
-      params.require(:idea).permit(:title, :description, :category_id, image_ids: [])
+      params.require(:idea).permit(:title, :description, :category_id, {image_ids: []})
     end
 
     def set_idea

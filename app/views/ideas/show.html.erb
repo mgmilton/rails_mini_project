@@ -1,6 +1,8 @@
+<html>
 <h3> <%= @idea.title %></h3>
 <p>Description: <%= @idea.description %> </p>
 <p>Category: <%= @idea.category.name %> </p>
 <p> <% @idea.images.each do |image| %>
      <img src="<%= image.url %>">
      <% end %> </p>
+</html>

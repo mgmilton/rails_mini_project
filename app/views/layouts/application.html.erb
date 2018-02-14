@@ -13,7 +13,7 @@
 
   <body>
     <% if current_user.nil?  %>
-      <%= render "shared/admin_navigation" %>
+      <%= render "shared/login_navigation" %>
     <% elsif current_user.role == "admin" %>
       <%= render "shared/admin_navigation"%>
     <% else %>

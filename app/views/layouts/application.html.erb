@@ -7,10 +7,18 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <%= render "shared/admin_navigation" %>
+    <% if current_user.nil?  %>
+      <%= render "shared/admin_navigation" %>
+    <% elsif current_user.role == "admin" %>
+      <%= render "shared/admin_navigation"%>
+    <% else %>
+      <%= render "shared/user_navigation" %>
+    <% end %>
 
     <div id="main-container" class="container">
       <div class="row">

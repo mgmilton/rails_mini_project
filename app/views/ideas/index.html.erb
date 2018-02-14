@@ -1,10 +1,36 @@
+
 <h2> All Ideas </h2>
 
-<% @ideas.each do |idea| %>
-  <%= link_to idea.title, user_idea_path(idea.user, idea) %>
-  <%= link_to "Edit", edit_user_idea_path(idea.user, idea) %>
-  <%= link_to "Delete", user_idea_path(idea.user, idea), method: :delete%> </br>
-  <%= idea.description %> </br> </br>
-<% end %>
+<div class="carousel slide" id="myCarousel">
+      <ol class="carousel-indicators">
+        <% @ideas.each do |idea| %>
+          <li data-target="#myCarousel" data-slide-to "<%= idea %>">
+        <% end %>
+      </ol>
 
-<%= link_to "Create an Idea", new_user_idea_path %>
+      <div class="carousel-inner" role="listbox">
+         <% @ideas.each do |idea| %>
+            <div class="item <%= 'active' if idea == @ideas[0] %>">
+              <img src="<%= idea.images.first.url %>">
+              <div class="carousel-caption d-none d-md-block">
+              <h3><%= link_to idea.title, user_idea_path(idea.user, idea) %> </h3>
+              <%= idea.description %> </br>
+              <%= link_to "Edit", edit_user_idea_path(idea.user, idea) %>
+              <%= link_to "Delete", user_idea_path(idea.user, idea), method: :delete%> </br> </br>
+              </div>
+            </div>
+            <% end %>
+
+
+      </div>
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+             </a>
+               <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+  <%= link_to "Create an Idea", new_user_idea_path %>

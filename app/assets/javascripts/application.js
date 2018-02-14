@@ -20,3 +20,7 @@
 $(document).ready(function(){
        $('.dropdown-toggle').dropdown();
    });
+
+$(function(){
+     $('#myCarousel').carousel('cycle');
+   });

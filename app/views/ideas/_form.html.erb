@@ -1,19 +1,39 @@
 <%= form_for [@user, @idea] do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">
+      <%= f.label :title %></label>
+      <div class="col-sm-10">
+      <%= f.text_field :title %>
+    </div>
+</div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">
+      <%= f.label :description %></label>
+      <div class="col-sm-10">
+        <%= f.text_area :description %>
+    </div>
+  </div>
 
-  <%= f.label :category_id %>
-  <%= f.collection_select(:category_id, Category.order(:name), :id, :name) %>
-</br>
-  <%= f.label :images %>
-  <% Image.all.each do |image| %>
-</br>
-    <%= check_box_tag 'image', image.id%>
-    <%= image_tag image.url %>
-    <% end %>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">
+      <%= f.label :category_id %></label>
+      <div class="col-sm-10">
+        <%= f.collection_select(:category_id, Category.order(:name), :id, :name) %>
+      </div>
+  </div>
 
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">
+      <div class="field">
+        <%= f.label :images, "Images:"%></label>
+        <div class="col-sm-10">
+        <% for image in Image.all %>
+        <%= check_box_tag 'idea[image_ids][]', image.id, @idea.image_ids.include?(image.id), :id => dom_id(image)%>
+        <%= image_tag image.url %> </br> </br>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <%= f.submit %>
 <% end %>

@@ -1,3 +1,7 @@
+body {
+  font-family: 'Marcellus', serif !important;
+}
+
 .carousel-control.left, .carousel-control.right {
     background-image: none
 }
@@ -12,11 +16,14 @@
     bottom: auto;
 }
 .carousel a {
-  color: #000 !important;
+  color: #00527A;
+}
+.carousel p {
+  color: #404242 ;
 }
 
 .caraousel-control {
-  color: #000 !important;
+  color: #000 ;
 }
 /* Mobile */
 @media (max-width: 767px) {

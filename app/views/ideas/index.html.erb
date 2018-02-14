@@ -1,7 +1,7 @@
 
 <h2> All Ideas: </h2>
 
-<div class="carousel slide" id="myCarousel" style="width: 400px">
+<div class="carousel slide" id="myCarousel" style="width: 600px">
       <ol class="carousel-indicators">
         <% @ideas.each do |idea| %>
           <li data-target="#myCarousel" data-slide-to "<%= idea %>">
@@ -14,7 +14,7 @@
                   <img src="<%= idea.images.first.url %>">
               <div class="carousel-caption d-none d-md-block">
               <h3><%= link_to idea.title, user_idea_path(idea.user, idea) %> </h3>
-              <%= idea.description %> </br></br>
+              <p><%= idea.description %> </br></br><p>
               <%= link_to "Edit", edit_user_idea_path(idea.user, idea) %>
               <%= link_to "Delete", user_idea_path(idea.user, idea), method: :delete%> </br> </br>
               </div>
@@ -31,6 +31,6 @@
                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
-              </div>
+    </div>
 
   <%= link_to "Create an Idea", new_user_idea_path %>

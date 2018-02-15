@@ -1,7 +1,14 @@
 
 <h2> All Ideas: </h2>
-<%= link_to "Create an Idea", new_user_idea_path %>
+<div class="row">
+  <div class="col-6 col-md-4">
+    <% @ideas.each do |idea| %>
+      <li><%= link_to idea.title, user_idea_path(idea.user, idea) %> </li>
+      <% end %>
+      <li> <%= link_to "Create an Idea", new_user_idea_path %> </li>
+  </div>
 
+  <div class="col-6 col-md-4">
   <div class="carousel slide" id="myCarousel" style="width: 600px">
     <ol class="carousel-indicators">
         <% @ideas.each do |idea| %>
@@ -36,3 +43,8 @@
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+</div>
+
+
+</div>
+</div>

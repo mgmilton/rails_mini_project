@@ -1,9 +1,23 @@
-<%= form_for login_path do %>
- <%= label_tag :email %>
- <%= text_field_tag :email %>
+ <!DOCTYPE html>
+ <html>
+   <head>
+   <style>
 
- <%= label_tag :password %>
- <%= password_field_tag :password %>
+   body {
+ 	background: #fff url("https://93e2469bdb6485cef6e7-436102ebd5bdd0628caf83514bef760c.ssl.cf2.rackcdn.com/60fd2fd38921e22118584fdfe052bb8a-f5ecda818986bf7780798a5739d22b9c.jpg") no-repeat center center fixed;
+   }
 
- <%= submit_tag "Log In Here" %>
- <% end %>
+   </style>
+   </head>
+   <body>
+     <%= form_for login_path do %>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+
+      <%= submit_tag "Log In Here" %>
+      <% end %>
+   </body>
+   </html>

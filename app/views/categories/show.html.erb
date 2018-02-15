@@ -1,5 +1,14 @@
-<h3> All Ideas under <%= @category.name %>: </h3>
-<div class="carousel slide" id="myCarousel" style="width: 600px">
+<h3> Ideas in <%= @category.name %>: </h3>
+<div class="row">
+  <div class="col-6 col-md-4">
+    <% @category.ideas.each do |idea| %>
+      <li><%=link_to idea.title, category_idea_path(idea.category, idea) %> </li>
+      <% end %>
+      <li> <%= link_to "Create a Category", new_category_path %> </li>
+  </div>
+
+  <div class="col-6 col-md-4">
+    <div class="carousel slide" id="myCarousel" style="width: 600px">
       <ol class="carousel-indicators">
         <% @category.ideas.each do |idea| %>
         <li data-target="#myCarousel" data-slide-to "<%= idea %>">
@@ -26,3 +35,5 @@
                   <span class="sr-only">Next</span>
                 </a>
     </div>
+  </div>
+  </div>

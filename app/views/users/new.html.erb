@@ -1,14 +1,33 @@
-<%= form_for @user do |f| %>
 
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %>
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+  body {
+	background: #fff url("https://93e2469bdb6485cef6e7-436102ebd5bdd0628caf83514bef760c.ssl.cf2.rackcdn.com/1780efb8ab54c52ed301721fb5cdb764-d4138c2923a23321cd34c7a208cb90fe.jpg") no-repeat top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  </style>
+  </head>
+  <body>
+  <%= form_for @user do |f| %>
 
-  <%= f.submit %>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
 
-<% end %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit %>
+
+  <% end %>
+</body>
+</html>

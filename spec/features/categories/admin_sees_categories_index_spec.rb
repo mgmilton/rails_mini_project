@@ -8,7 +8,7 @@ describe "User visits categories index page" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit categories_path
-      expect(page).to have_content("Admin Categories")
+      expect(page).to have_content("Categories")
     end
   end
 
@@ -18,7 +18,7 @@ describe "User visits categories index page" do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit categories_path
-      expect(page).to_not have_content("Admin Categories")
+      expect(page).to_not have_content("Categories")
       expect(page).to have_content("The page you were looking for doesn't exist")
     end
   end

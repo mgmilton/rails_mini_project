@@ -1,13 +1,14 @@
 <html>
-<h1> Admin Categories </h1>
+<h1> Categories: </h1>
 
 <% @categories.each do |category| %>
-  <%= link_to category.name, category_path(category) %>
-  <%= link_to "Edit", edit_category_path(category) %>
-  <%= link_to "Delete", category_path(category), method:
-  :delete %> </br>
+ <p>
+  <button type="button" class="btn btn-success"><%= link_to category.name, category_path(category) %></button>
+  <button type="button" class="btn btn-warning"><%= link_to "Edit", edit_category_path(category) %></button>
+  <button type="button" class="btn btn-danger"><%= link_to "Delete", category_path(category), method:
+  :delete %> </button></br>
+</p>
+  <% end %></br></br>
 
-  <% end %></br>
-
-<%= link_to "Create A Category", new_category_path %>
+<button type="button" class= "btn btn-primary"><%= link_to "Create A Category", new_category_path %></button>
 </html>

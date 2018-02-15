@@ -10,7 +10,7 @@ describe "User visits image index page" do
 
       visit images_path
 
-      click_link "#{image.name}"
+      first(:link, "#{image.name}").click
 
       expect(current_path).to eq(image_path(image))
       expect(page).to have_content(image.name)

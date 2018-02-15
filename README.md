@@ -1,4 +1,4 @@
-# README
+# IDEA BOX
 
 This is a simple website where users can log their ideas.
 

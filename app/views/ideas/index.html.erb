@@ -3,9 +3,12 @@
 <div class="row">
   <div class="col-6 col-md-4">
     <% @ideas.each do |idea| %>
-      <li><%= link_to idea.title, user_idea_path(idea.user, idea) %> </li>
+      <li><%= link_to idea.title, user_idea_path(idea.user, idea) %>
+      <ul><%= link_to "Edit", edit_user_idea_path(idea.user, idea) %>
+      <%= link_to "Delete", user_idea_path(idea.user, idea), method: :delete%> </br> </ul>
       <% end %>
       <li> <%= link_to "Create an Idea", new_user_idea_path %> </li>
+
   </div>
 
   <div class="col-6 col-md-4">

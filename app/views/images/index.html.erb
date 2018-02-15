@@ -7,7 +7,7 @@
     </div>
 
   <div class="col-6 col-md-4">
-    <div class="carousel slide" data-ride="carousel" id="myCarousel" style="width: 600px">
+    <div class="carousel slide" data-ride="carousel" id="myCarousel" data-interval="3000" style="width: 600px">
       <ol class="carousel-indicators">
         <% @images.each do |image| %>
         <li data-target="#myCarousel" data-slide-to "<%= image %>">

@@ -8,7 +8,7 @@
   </div>
 
   <div class="col-6 col-md-4">
-    <div class="carousel slide" id="myCarousel" style="width: 600px">
+    <div class="carousel slide" id="myCarousel" data-interval="3000" style="width: 600px">
       <ol class="carousel-indicators">
         <% @category.ideas.each do |idea| %>
         <li data-target="#myCarousel" data-slide-to "<%= idea %>">

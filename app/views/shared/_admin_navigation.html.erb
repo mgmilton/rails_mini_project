@@ -26,10 +26,9 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/categories"> Categories <span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="/categories">All</a></li>
-        <li><a href="/categories/1">Organization</a></li>
-        <li><a href="/categories/2">Recreation</a></li>
-        <li><a href="/categories/3">Blog Post</a></li>
-        <li><a href="/categories/4">Goals</a></li>
+        <% @categories.each do |category| %>
+        <li><a href="/categories/<%=category.id  %>"> <%= category.name %></a></li>
+        <% end %>
         <li><a href="/categories/new">New</a></li>
       </ul>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/images"> Images <span class="caret"></span></a>

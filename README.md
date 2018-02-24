@@ -11,4 +11,5 @@ rails db:migrate
 rails db:seed
 rails s
 ```
+[schema][http://ondras.zarovi.cz/sql/demo/?keyword=bike_share]
 Then visit localhost:3000 in your web browser, or just explore the site [here](https://agile-citadel-23714.herokuapp.com/)

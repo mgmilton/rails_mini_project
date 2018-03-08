@@ -13,4 +13,4 @@ rails s
 ```
 
 
-Then visit localhost:3000 in your web browser, or just explore the site [here](https://agile-citadel-23714.herokuapp.com/)
+Then visit localhost:3000 in your web browser, or just explore the site [here](http://outsidetheideabox.herokuapp.com/)
